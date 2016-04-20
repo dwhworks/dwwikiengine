@@ -1,7 +1,7 @@
 DWWiki
 =======
 
-DWWiki is a simple wiki-like system for database reporting.
+DWWiki is a lightweight wiki-like system for database reporting.
 
 It started as a set of utilities for embedding SQL queries
 into markdown-formatted documents for creating documentation
@@ -19,7 +19,7 @@ bloated BI engines.
 Design Concept
 ==============
 
-1. Write a wiki-page in markdown, include sql queries into the text.
+1. Write a wiki-page in markdown, include SQL queries into the text.
 
 2. Display results of a query as table, graph, chart, map... etc.
 
@@ -31,17 +31,17 @@ Design Concept
 
 6. Connect to several databases.
 
-7. Fine-grained control of user access to database tables and reports.
+7. Fine-grained control of user access to databases, tables and reports.
 
 8. Edit reports in your favourite text editor or through simple web text editor.
 
 9. Track report versions with commonly used tools - git, svn, whatever you like.
 
-10. Avoid abstraction layers between the user and the database engine.
+10. Avoid abstraction layers between the user and the database.
 
 11. Friendly to non-programmers, yet open for advanced users.
 
-11. Keep away from hyper-interactive interface. Keep it simple.
+11. Keep away from bloated hyper-interactive interface. Keep it simple.
 
 Architecture & Dependencies
 ============================
@@ -54,15 +54,15 @@ PDF rendering is done with [PDFKit](https://pypi.python.org/pypi/pdfkit)
 Installation
 ============
 
-1. Install Python 2.6..2.7.
+1. Install Python 2.6 to 2.7.
 
-2. Download dwwiki.
+2. Download dwwiki engine.
 
 4. Run `python dwwikiserver.py` from installation directory.
    Check stdout if there are any errors or warnings. Ignore
    warnings.
 
-5. Open `http://localhost:8087` in a browser.
+5. Open `http://localhost:8087` in a browser. Read the docs.
 
 References
 ==========
