@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-19 01:36+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "LC_CANCEL"
+msgstr "Отмена"
+
+msgid "LC_CREATING_NEW_FILE"
+msgstr "Вы собираетесь создать новую страницу"
+
+msgid "LC_EDIT"
+msgstr "править"
+
+msgid "LC_EDITOR"
+msgstr "редактор"
+
+msgid "LC_ERROR_WRITING_TO_FILE"
+msgstr "Ошибка при сохранении файла"
+
+msgid "LC_ERROR"
+msgstr "Ошибка"
+
+msgid "LC_INVALID_USERNAME"
+msgstr "Неверное имя пользователя или пароль"
+
+msgid "LC_LOG_IN"
+msgstr "Войти"
+
+msgid "LC_LOG_OUT"
+msgstr "Выйти"
+
+msgid "LC_LOGIN_TO_DW_WIKI"
+msgstr "Вход"
+
+msgid "LC_NAVIGATE_TO"
+msgstr "Перейти к"
+
+msgid "LC_PASSWORD"
+msgstr "Пароль"
+
+msgid "LC_READING_REPORT_NOT_ALLOWED"
+msgstr "Недостаточно прав доступа для просмотра этой страницы."
+
+msgid "LC_SAVE"
+msgstr "Сохранить"
+
+msgid "LC_SAVE_AND_CLOSE"
+msgstr "Сохранить и закрыть"
+
+msgid "LC_UNDER_CONSTRUCTION"
+msgstr "Строительные работы..."
+
+msgid "LC_URL_DOES_NOT_EXIST"
+msgstr "Такой страницы не существует, или у Вас недостаточно прав доступа к ней."
+
+msgid "LC_USER_NAME"
+msgstr "Имя пользователя"
+
+msgid "LC_WRITING_REPORT_NOT_ALLOWED"
+msgstr "Вы не можете сохранить сделанные изменения. Недостаточно прав доступа."
+
+msgid "LC_INFO_REPORT_CHANGES_SAVED"
+msgstr "Ваши изменения сохранены."
+

@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-19 01:36+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "LC_CANCEL"
+msgstr "Cancel"
+
+msgid "LC_CREATING_NEW_FILE"
+msgstr "You are about to create a new page"
+
+msgid "LC_EDIT"
+msgstr "edit"
+
+msgid "LC_EDITOR"
+msgstr "редактор"
+
+msgid "LC_ERROR_WRITING_TO_FILE"
+msgstr "Error saving the file"
+
+msgid "LC_ERROR"
+msgstr "Error"
+
+msgid "LC_INVALID_USERNAME"
+msgstr "Invalid user name or password"
+
+msgid "LC_LOG_IN"
+msgstr "Log in"
+
+msgid "LC_LOG_OUT"
+msgstr "Log out"
+
+msgid "LC_LOGIN_TO_DW_WIKI"
+msgstr "Login"
+
+msgid "LC_NAVIGATE_TO"
+msgstr "Navigate to"
+
+msgid "LC_PASSWORD"
+msgstr "Password"
+
+msgid "LC_READING_REPORT_NOT_ALLOWED"
+msgstr "Access to this page is not allowed."
+
+msgid "LC_SAVE"
+msgstr "Save"
+
+msgid "LC_SAVE_AND_CLOSE"
+msgstr "Save and close"
+
+msgid "LC_UNDER_CONSTRUCTION"
+msgstr "Under construction..."
+
+msgid "LC_URL_DOES_NOT_EXIST"
+msgstr "Requested URL does not exist, or you do not have permissions to access it."
+
+msgid "LC_USER_NAME"
+msgstr "User name"
+
+msgid "LC_WRITING_REPORT_NOT_ALLOWED"
+msgstr "You cannot save your edits. No permissions."
+
+msgid "LC_INFO_REPORT_CHANGES_SAVED"
+msgstr "Your changes have been saved."

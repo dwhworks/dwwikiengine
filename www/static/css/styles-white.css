@@ -1,0 +1,609 @@
+/* common styles first */
+
+h1,h2,h3,h4,h5,h6 
+{
+	font-size:110%;
+	font-weight:normal;
+}
+
+a:link {
+    /*color:FireBrick;*/
+    color:Blue;
+    /*color: #0000EE;*/
+}
+
+a:visited {
+    color: #551A8B;
+    /*color: brown;*/
+}
+
+body {
+    background-color: white;
+    color:black;
+    padding:0px;
+    margin:0px;
+    font-size:110%;
+}
+
+/* right column with small reports */
+div.rightcolumn {
+    float:right;
+    background-color:WhiteSmoke;
+    padding-left:12px;
+    padding-right:12px;
+    padding-top:12px;
+    padding-bottom:12px;
+    margin-left:12px;
+    margin-bottom:12px;
+    margin-right:12px;
+}
+
+
+
+.login {
+    background:white;
+    font-family: Helvetica, Arial, sans-serif;
+    padding:0;
+    margin:0
+}
+
+div.notice {
+    font-family: Helvetica;
+    padding-top:6px;
+    padding-left:6px;
+    padding-bottom:6px;
+    margin-top:0px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    border:0;
+    text-align:center;
+    font-weight:600;
+    font-size:15px;
+    background-color:#EDE04D;
+    /*background-color:khaki;*/
+    color:#212200;
+}
+
+/* div for report body*/
+div.report-body {
+    padding-left:36px;
+    padding-right:36px;
+    font-family: Georgia, Times New Roman, serif;
+    background-color: white;
+    color:black;
+    font-size:100%;
+}
+
+.report-body h1 {
+    /*font-family: "Courier New", Courier, "Liberation Mono", "Lucida Console", Monospace;*/
+    font-family: Georgia, serif;
+    text-decoration:none;
+    font-size: 200%;
+    font-weight: 400;
+    /*color: rgb(4,99,128);*/
+    /*color: #0B331B;*/
+    /*color: DarkOliveGreen;*/
+    color: DarkSlateGrey;
+    /*letter-spacing:1px;*/
+    max-width: 44em;
+}
+
+.report-body h2 {
+    /*font-size:125%;*/
+    font-size:160%;
+	font-weight:400;
+	/*font-family: Helvetica, Arial, Sans-Serif;*/
+	/*font-family: Helvetica, Arial, Sans-Serif;*/
+    font-family: Georgia, serif;
+    /*color:rgb(4,99,128);*/
+    color: Black;
+    max-width: 32em;
+    
+}
+
+.report-body h3
+{
+    font-family: Georgia, serif;
+	/*font-family: Helvetica,Arial,Sans-Serif;*/
+    font-size:125%;
+	font-weight: 200;
+	/*color: rgb(4,99,128);*/
+    color: Black;
+	margin-top: 1em;
+    max-width: 38em;
+}
+
+.report-body h4
+{
+    font-family: Georgia, serif;
+	/*font-family: Helvetica,Arial,Sans-Serif;*/
+    font-size:110%;
+	font-weight: 200;
+	/*color: rgb(4,99,128);*/
+    color: Black;
+	margin-top: 1em;
+}
+
+
+span.microhead
+{
+	font-family: Helvetica,Arial,Sans-Serif;
+	font-weight: bold;
+	color: rgb(4,99,128);
+	display: inline;
+	margin-top: 1em;
+}
+
+.report-body p {
+    max-width: 44em;
+    line-height: 130%;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.report-body li {
+    max-width: 40em;
+}
+
+.report-body code {
+    white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
+    font-size: 100%;
+    font-family: Monospace, "Lucida Console", "Courier New", "Courier";
+}
+
+.colored-code {
+    width:100%;
+    background-color:Beige;
+    font-size: 100%;
+    padding-top:12px;
+    padding-left:12px;
+    padding-bottom:12px;
+    padding-right:12px;
+    border: 1px solid silver;
+}
+
+/* Table style for report */
+
+.standard-report-table {
+    border-collapse: collapse;
+    /*border: 1px solid black;*/
+    border: none;
+    /*font-family: "Courier New", Courier, "Lucida Console", Monospace;*/
+	font-family: Helvetica, Arial, Sans-Serif;
+    font-size: 100%;
+    table-layout:fixed;
+    background-color:White;
+}
+
+.standard-report-header {
+    /*background-color: WhiteSmoke;*/
+    background-color: Wheat;
+    font-weight: bold;
+    border: 1px solid black;
+    vertical-align: top;
+    padding: 4px;
+}
+
+.standard-report-cell {
+    border: 1px solid black;
+    vertical-align: top;
+    padding: 4px;
+    background-color:White;
+}
+
+.standard-report-footer {
+    /*background-color: WhiteSmoke;*/
+    background-color: Wheat;
+    font-weight: bold;
+    border: 1px solid black;
+    vertical-align: top;
+    padding: 4px;
+}
+
+.standard-report-footer-numbers {
+    /*background-color: WhiteSmoke;*/
+    background-color: Wheat;
+    font-weight: bold;
+    border: 1px solid black;
+    vertical-align: top;
+    padding: 4px;
+    text-align:right;
+}
+
+/* Experimental table style */
+
+.blue-report-table {
+    border-collapse: collapse;
+    /*border: 1px solid black;*/
+    border: 1px solid black;
+    font-family: Monospace;
+    font-size: 12pt;
+    table-layout:fixed;
+}
+
+.blue-report-header {
+    background-color: Navy;
+    font-weight: bold;
+    color: White;
+    border: 1px solid Navy;
+    vertical-align: top;
+    padding: 4px;
+}
+
+.blue-report-cell {
+    border: none;
+    vertical-align: top;
+    padding: 4px;
+}
+
+.blue-report-footer {
+    background-color: Navy;
+    font-weight: bold;
+    color: White;
+    border: 1px solid Yellow;
+    vertical-align: top;
+    padding: 4px;
+}
+
+/* Now the standard table rendered with plain table tag
+ * Wee keep it same as standard-report
+ */
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-family: Monospace;
+    font-family: Arial, Helvetica,sans-serif;
+    font-size: 100%;
+    table-layout:fixed;
+    background-color:White;
+}
+
+th {
+    /*background-color: WhiteSmoke;*/
+    background-color: Wheat;
+    font-weight: bold;
+    border: 1px solid black;
+    vertical-align: top;
+    padding: 4px;
+}
+
+td {
+    border: 1px solid black;
+    vertical-align: top;
+    padding: 4px;
+}
+
+div.logo {
+    /*font-family: Courier,Liberation Mono,Monospace;*/
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 100%;
+    font-weight: normal;
+    padding-top:6px;
+    padding-left:6px;
+    padding-bottom:6px;
+    margin-top:0px;
+    margin-left:0px;
+    margin-right:0px;
+    /*background-color:#f9f5d2;*/
+    background-color:#507581;
+    /*background-color:#383838;*/
+    /*background-color:DarkKhaki;*/
+    /*background-color: rgb(4,99,128);*/
+    /*background-color:White;*/
+    color:white;
+    overflow:hidden;
+}
+
+.logo a {
+    /*color:#556b3a;*/
+    /*color:#556b3a;*/
+    color:white;
+    text-decoration:none;
+    vertical-align:middle;
+}
+
+
+div.menu {
+    /*background-color:WhiteSmoke;*/
+    background-color:White;
+    font-family: Helvetica, Arial, sans-serif;
+    /*font-family: Monospace;*/
+    font-size: 100%;
+    /*font-weight: bold;*/
+    padding-top:6px;
+    padding-left:12px;
+    padding-right:12px;
+    padding-bottom:6px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-top:0px;
+    color:black;
+    border-bottom:2px solid silver;
+    border-top:2px solid silver;
+}
+
+/* At the bottom of page */
+div.bottom-menu {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color:WhiteSmoke;
+    font-size: 100%;
+    /*font-weight: bold;*/
+    padding-top:6px;
+    padding-left:12px;
+    padding-bottom:6px;
+    margin-left:0px;
+    margin-right:0px;
+    background-color:White;
+    color:black;
+    border-top:2px solid silver;
+    border-bottom:2px solid silver;
+}
+
+/* Report editor page */
+
+.report-editor {
+    background:white;
+    /*font-family: Georgia;*/
+    font-family: Helvetica, Arial, sans-serif;
+    /*font-family: Monospace;*/
+    background-color: white;
+    color:black;
+    font-size: 100%;
+    padding:0px;
+    margin:0px;
+}
+
+/* report editor internal div to make some margins*/
+.report-editor div.page-body {
+    padding-left:12px;
+}
+
+
+.report-editor div.notice {
+    padding-top:6px;
+    padding-left:6px;
+    padding-bottom:6px;
+    margin-top:0px;
+    margin-left:-12px;
+    margin-right:-12px;
+    margin-bottom:0px;
+    border:0;
+    text-align:center;
+    font-weight:600;
+    font-size:15px;
+    background-color:#EDE04D;
+    /*background-color:khaki;*/
+    color:#212200;
+}
+
+.report-editor h3
+{
+	font-family: Helvetica,Arial,Sans-Serif;
+	font-weight: bold;
+	color: rgb(4,99,128);
+	margin-top: 1em;
+}
+
+.report-editor code {
+    white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
+    font-size: 100%;
+}
+
+/* class for filename text input */
+.editor-input {
+    border:2px solid gray;
+    font-family: Courier New, Courier, Monospace;
+    font-size: 12pt;
+    margin-bottom:6px auto;
+    padding-left:15px;
+    padding-top:6px;
+    padding-bottom:6px;
+    width:40em;
+}
+
+.report-editor textarea {
+    background:#fcfcfc;
+    border:2px solid gray;
+    margin:6px auto;
+    padding:15px;
+    width:100%;
+    display:block;
+    font-family: Monospace;
+    font-size: 12pt;
+    text-align:left;
+    height:auto
+}
+
+.report-editor input.submit-button {
+    /*display:block;*/
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    margin:6px auto;
+    padding-top:6px
+    padding-bottom:6px;
+    padding-left:6px;
+    padding-right:6px;
+    /*width:100%;*/
+    /*background-color:Firebrick;*/
+    background-color:#00af89;
+    color:white;
+    border:1px solid black;
+    font-weight:500;
+    font-size:110%;
+    text-align:center;
+    /*font-family: Helvetica;*/
+    cursor:pointer;
+    height:auto
+}
+
+.report-editor input.submit-button:hover {
+    background-color:#008C6D;
+    /*background-color:Firebrick;*/
+}
+
+
+/* Login page */
+
+.vertical-form {
+    margin:0 auto;
+    max-width:300px;
+    padding:40px;
+    border-radius:3px;
+    background:white
+}
+
+.vertical-form legend{
+    text-align:center;
+    font-weight:300;
+    color:#565656;
+    margin:0;
+    font-size:150%;
+    /*line-height:38px;*/
+    text-transform:none;
+    letter-spacing:0
+}
+
+.vertical-form input[type='text'],
+.vertical-form input[type='password'],
+.vertical-form input[type='number'] {
+    background:#fcfcfc;
+    border:2px solid gray;
+    margin:20px auto;
+    padding:15px;
+    width:100%;
+    display:block;
+    border-radius:3px;
+    font-size:18px;
+    transition:opacity 0.4s;
+    text-align:left;
+    height:auto
+}
+
+.vertical-form input.submit-button {
+    display:block;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    margin:20px auto;
+    padding:15px;
+    width:100%;
+    /*background-color:#00af89;*/
+    background-color:#00af89;
+    /*background-color:Tomato;*/
+    color:#fff;
+    border:1px solid #00af89;
+    font-weight:500;
+    font-size:22px;
+    text-align:center;
+    /*font-family: Helvetica;*/
+    cursor:pointer;
+    height:auto
+}
+
+.vertical-form input.submit-button:hover {
+    background-color:#008C6D;
+    /*background-color:FireBrick;*/
+}
+
+ul.notice{
+    margin:0;
+    border:0;
+    width:100%;
+    text-align:center;
+    list-style-position:inside;
+    list-style:none;
+    font-weight:600;
+    font-size:15px;
+    padding:10px
+}
+
+ul.notice.info{
+    background-color:#EDE04D;
+    color:#212200
+}
+
+ul.notice.errors{
+    background-color:#EDE04D;
+    color:#212200
+}
+
+p.form-text {
+    padding-top:3px;
+    margin-bottom:3px;
+    margin-top:6px;
+    font-family: inherit;
+    font-size:inherit;
+}
+
+.mw-ui-input{
+    -webkit-appearance:none;
+    border:1px solid #CCC;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    width:100%;
+    padding:.3em .3em .3em .6em;
+    display:block;
+    vertical-align:middle;
+    border-radius:2px;
+    font-family:inherit;
+    font-size:inherit;
+    line-height:inherit;
+    -webkit-transition:border 0.2s cubic-bezier(0.39,0.575,0.565,1),box-shadow 0.2s cubic-bezier(0.39,0.575,0.565,1);-moz-transition:border 0.2s cubic-bezier(0.39,0.575,0.565,1),box-shadow 0.2s cubic-bezier(0.39,0.575,0.565,1);-o-transition:border 0.2s cubic-bezier(0.39,0.575,0.565,1),box-shadow 0.2s cubic-bezier(0.39,0.575,0.565,1);transition:border 0.2s cubic-bezier(0.39,0.575,0.565,1),box-shadow 0.2s cubic-bezier(0.39,0.575,0.565,1)}
+
+.mw-ui-input2 {
+    -webkit-appearance:none;
+    border:1px solid black;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    width:200px;
+    padding:.6em .6em .3em .3em;
+    display:block;
+    vertical-align:middle;
+    border-radius:2px;
+    font-family:inherit;
+    font-size:inherit;
+    line-height:inherit;
+}
+
+p.sqlerrorcode {
+    font-family: Monospace;
+    font-size: 12pt;
+}
+
+div.errorblock {
+    border:1px solid red;
+    background-color: #FFCCFF;
+    padding-left: 2em;
+    padding-right: 2em;
+    display:inline-block;
+}
+
+div.warningblock {
+    display:inline-block;
+    border:1px solid green;
+    background-color: #CCFFFF;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.green {
+    background-color: lime;
+}
+
+div.bottom
+{
+    font-family: Helvetica, Arial, Sans-Serif;
+    font-size: 0.75em;
+    line-height: 140%;
+    margin-top: 1em; 
+    padding-left:12px;
+}
+

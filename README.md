@@ -46,10 +46,10 @@ Design Concept
 Architecture & Dependencies
 ============================
 
-Written in python.
-DWWiki engine is built on top of [CherryPy](http://www.cherrypy.org/).
-Charts are rendered using [Matplotlib](http://matplotlib.org/)
-PDF rendering is done with [PDFKit](https://pypi.python.org/pypi/pdfkit)
+Written in python.  
+DWWiki engine is built on top of [CherryPy](http://www.cherrypy.org/).  
+Charts are rendered using [Matplotlib](http://matplotlib.org/)  
+PDF rendering is done with [PDFKit](https://pypi.python.org/pypi/pdfkit)  
 
 Installation
 ============
