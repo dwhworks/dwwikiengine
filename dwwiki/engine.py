@@ -734,8 +734,9 @@ class DWWikiEngine(object):
         if qmark >= 0:
             path_str = path_str[:qmark]
 
-        # Cancel link. Must point to current page
-        cancel_link = base + relative_path
+        # Cancel link. Must point to current page. TODO No base. Will it work in all conditions?
+        #cancel_link = base + relative_path
+        cancel_link = relative_path
         # remove action=edit
         cancel_link = cancel_link.replace('?action=edit', '')
         cancel_link = cancel_link.replace('&action=edit', '')

@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 # Report editor template
+# This file is deprecated. Now we use tamplates.
+# It will be removed.
 
 PAGE_HEADER = """<html>
     <head>
