@@ -729,7 +729,8 @@ class DWWikiEngine(object):
         
         relative_path = cherrypy.request.request_line.split()[1]
         
-        path_str = base + relative_path
+        #path_str = base + relative_path
+        path_str = relative_path
         qmark = path_str.find('?')
         if qmark >= 0:
             path_str = path_str[:qmark]
