@@ -605,7 +605,7 @@ class DWWikiEngine(object):
             # if just save, redirect to itself
             if 'save' in params:
                 #raise cherrypy.HTTPRedirect(base + get_params)
-                raise cherrypy.HTTPRedirect(back_link)
+                raise cherrypy.HTTPRedirect(get_params)
             # this is saveandclose
             else:
                 raise cherrypy.HTTPRedirect(back_link)
