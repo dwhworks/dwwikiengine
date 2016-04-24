@@ -72,7 +72,7 @@ def make_page_menu(langs=True, edit=False, add_login_link=True):
     user = cherrypy.session.get('user', '')
 
     if edit is True:
-        edit_url=base + cherrypy.request.request_line.split()[1]
+        edit_url = cherrypy.request.request_line.split()[1]
         if edit_url.find('?') >= 0:
             edit_url += '&action=edit'
         else:
