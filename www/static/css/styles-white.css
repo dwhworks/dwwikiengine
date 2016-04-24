@@ -152,10 +152,12 @@ span.microhead
     word-wrap: normal;
     font-size: 100%;
     font-family: Monospace, "Lucida Console", "Courier New", "Courier";
+    background-color:Beige;
 }
 
 .colored-code {
-    width:100%;
+    /*width:100%;*/
+    max-width: 44em;
     background-color:Beige;
     font-size: 100%;
     padding-top:12px;

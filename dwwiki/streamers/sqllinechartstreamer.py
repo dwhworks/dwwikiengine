@@ -64,8 +64,13 @@ class SqlLineChartStreamer(dwstreamer.BaseDwStreamer):
     # line width in pixels
     ATTR_LINE_WIDTH = 'linewidth'
 
+
     # the line color if user hasn't specified one
     DEFAULT_LINE_COLOR = 'black'
+    
+    # fill color for line
+    ATTR_FILL_COLOR = 'fillcolor'
+    DEFAULT_FILL_COLOR = 'none'
 
     ATTR_MARKER = 'marker'
     ATTR_MARKER_DEFAULT = ''
@@ -270,6 +275,10 @@ class SqlLineChartStreamer(dwstreamer.BaseDwStreamer):
         # We'll deal with it later, when we read the columns
         line_color_list = line_color_str.split(',')
 
+        fill_color_str = tokens.get(self.ATTR_FILL_COLOR, self.DEFAULT_FILL_COLOR).strip()
+        fill_color_str = fill_color_str.encode('utf-8')
+        fill_color_list = fill_color_str.split(',')
+
         # line style.
         marker_str = tokens.get(self.ATTR_MARKER, self.ATTR_MARKER_DEFAULT).strip()
         #line_style_list = line_style_str.split(',')
@@ -412,6 +421,7 @@ class SqlLineChartStreamer(dwstreamer.BaseDwStreamer):
             color_converter = ColorConverter()
 
             final_color_list = list()
+            final_fill_list = list()
             for i in range(0,col_count-1):
                 # Just in case the user specified less colors, than columns
                 if i < len(line_color_list):
@@ -419,15 +429,30 @@ class SqlLineChartStreamer(dwstreamer.BaseDwStreamer):
                 else:
                     # we have more columns, than colors specified by user
                     color_str = self.DEFAULT_LINE_COLOR
-                
+
                 # The color may well be gibberish
                 try:
                     color_rgba = color_converter.to_rgba(color_str)
                 except Exception, e:
                     #sys.stderr.write("Color error: %s\n" % color_str)
                     color_str = self.USER_ERROR_LINE_COLOR
-
+                
                 final_color_list.append(color_str)
+                
+                # fill color
+                if i < len(fill_color_list):
+                    fill_str = fill_color_list[i].strip()
+                else:
+                    # more columns than colors
+                    fill_str = 'none'
+                
+                try:
+                    color_rgba = color_converter.to_rgba(fill_str)
+                except Exception, e:
+                    #sys.stderr.write("Color error: %s\n" % color_str)
+                    fill_str = 'none'
+                
+                final_fill_list.append(fill_str)
 
                 # now add a dictionary for each column
                 d = {'yvalues': list(), 'xmasked': list()}
@@ -496,7 +521,6 @@ class SqlLineChartStreamer(dwstreamer.BaseDwStreamer):
 
                 # Now for each subsequent column
                 # try to establish y values for each line
-                #print col_values_list
                 for i in range(0, col_count-1):
                     # get our dictionary of y values and masked x values
                     d = col_values_list[i]
@@ -504,7 +528,6 @@ class SqlLineChartStreamer(dwstreamer.BaseDwStreamer):
                     value = row[i+1]
 #                    y_axis_values = list_of_lists_of_y_values[i]
 #                    x_axis_values = list_of_lists_of_x_values[i]
-                    #print y_axis_values
 
                     # For null values. If we already have
                     # an array of y values for this column, it means it's time
@@ -573,6 +596,11 @@ class SqlLineChartStreamer(dwstreamer.BaseDwStreamer):
             # Now draw the final set of lines
             for i in range(len(col_values_list)):
                 color_rgba = final_color_list[i]
+                fill_rgba = final_fill_list[i]
+                min_fill = 0
+                if (miny is not None):
+                    min_fill = miny
+
                 d = col_values_list[i]
                 line_y_values = d['yvalues']
 
@@ -629,15 +657,14 @@ class SqlLineChartStreamer(dwstreamer.BaseDwStreamer):
                                         marker=final_marker,
                                         linewidth=final_line_width)
 
-                                #ax.fill_between(final_x_values, final_y_values)
-                                #ax.fill_between(final_x_values, 60, final_y_values, color=color_rgba)
+                                ax.fill_between(final_x_values, min_fill, final_y_values, color=fill_rgba)
                                 legend_needed = False
                             else:
                                 ax.plot(final_x_values, final_y_values,
                                         color=color_rgba,
                                         marker=final_marker,
                                         linewidth=final_line_width)
-                                #ax.fill_between(final_x_values, final_y_values,0)
+                                ax.fill_between(final_x_values, min_fill, final_y_values, color=fill_rgba)
                                 
                         # empty all
                         final_y_values = list()
@@ -650,13 +677,13 @@ class SqlLineChartStreamer(dwstreamer.BaseDwStreamer):
                                 marker=final_marker,
                                 linewidth=final_line_width)
                         legend_needed = False
-                        #ax.fill_between(final_x_values, 60, final_y_values, color='yellow')
+                        ax.fill_between(final_x_values, min_fill, final_y_values, color=fill_rgba)
                     else:
                         ax.plot(final_x_values, final_y_values,
                                 color=color_rgba,
                                 marker=final_marker,
                                 linewidth=final_line_width)
-                        #ax.fill_between(final_x_values, final_y_values)
+                        ax.fill_between(final_x_values, min_fill, final_y_values, color=fill_rgba)
             
             # deal with legend
             if legend_str == self.ATTR_VALUE_YES:

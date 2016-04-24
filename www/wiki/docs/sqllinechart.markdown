@@ -27,12 +27,12 @@ Simple example (rather ugly):
 {sqllinechart}
 select
     r.date_id,
-    r.current_rate "USD"
+    r.current_rate "CNY"
 from
     curr_rates r
 where
     r.date_id between '2016-02-01' and '2016-02-10'
-    and r.curr_code = 'USD'
+    and r.curr_code = 'CNY'
 {sqllinechart}
 
 Look at the code:
@@ -42,12 +42,12 @@ Look at the code:
  {sqllinechart}
 select
     r.date_id,
-    r.current_rate "USD"
+    r.current_rate "CNY"
 from
     curr_rates r
 where
     r.date_id between '2016-02-01' and '2016-02-10'
-    and r.curr_code = 'USD'
+    and r.curr_code = 'CNY'
  {sqllinechart}
 </code>
 </div>
@@ -59,12 +59,12 @@ Look at the query results as is:
 {sqltable}
 select
     r.date_id,
-    r.current_rate "USD"
+    r.current_rate "CNY"
 from
     curr_rates r
 where
     r.date_id between '2016-02-01' and '2016-02-10'
-    and r.curr_code = 'USD'
+    and r.curr_code = 'CNY'
 {sqltable}
 
 Now let's add the second line, add color to both,
@@ -111,9 +111,9 @@ order by r.date_id;
 </div>
 
 Now let's deal with x-axis marks. I would like to
-make a time span a little bigger, say, 6 months.
-In which case, I would see a lot of clutter with
-dates below x-axis.
+make a time span a little longer, say, 6 months.
+In which case, I would see a lot of lables for
+dates below x-axis, obscuring each other.
 So I want to output only the first day of each month as an x-axis mark.
 
 At the same time, let's make the chart image a bit smaller
@@ -191,6 +191,75 @@ the x-axis mark will not appear. Yet, if you specify
 a space or an empty string, the mark will appear,
 but you won't see any label to it.
 
+
+### Fills ###
+
+We may also fill the area with colors by specifying `fillcolor` parameter:
+
+{sqllinechart: linecolor=red,blue,green | fillcolor=#f9966b,#99ccff,#99ff99 |
+ylabel=RUB | title=Exchange rates
+| width=400 | height=320 | grid=both | miny=0
+}
+select
+    case 
+        when d.month_day_num = 1 then
+            d.month_name_short_en
+        -- just marks without a label
+        when d.month_day_num = 15 then
+            ""
+        else null
+    end xmark
+    ,gbp.current_rate "GBP"
+    ,eur.current_rate "EUR"
+    ,r.current_rate "USD"
+from
+    curr_rates r
+    join curr_rates eur
+      on r.date_id = eur.date_id and eur.curr_code = 'EUR'
+    join curr_rates gbp
+      on r.date_id = gbp.date_id and gbp.curr_code = 'GBP'
+    -- get mondays from dates dimension
+    join dates d on r.date_id = d.date_id
+where
+    r.date_id between '2015-10-01' and '2016-04-01'
+    and r.curr_code = 'USD'
+order by r.date_id;
+{sqllinechart}
+
+*Note:*  
+
+All lines and all filled areas are drawn according to the column order.
+So the second filled area may completely obscure the first one. Yet the
+line itself is still visible. See below:
+
+{sqllinechart: linecolor=red,blue,green | fillcolor=#f9966b,#99ccff,#99ff99 |
+ylabel=RUB | title=Exchange rates
+| width=400 | height=320 | grid=both | miny=50
+}
+select
+    case 
+        when d.month_day_num = 1 then
+            d.month_name_short_en
+        -- just marks without a label
+        when d.month_day_num = 15 then
+            ""
+        else null
+    end xmark
+    ,r.current_rate "USD"
+    ,eur.current_rate "EUR"
+from
+    curr_rates r
+    join curr_rates eur
+      on r.date_id = eur.date_id and eur.curr_code = 'EUR'
+    -- get mondays from dates dimension
+    join dates d on r.date_id = d.date_id
+where
+    r.date_id between '2015-10-01' and '2016-04-01'
+    and r.curr_code = 'USD'
+order by r.date_id;
+{sqllinechart}
+
+
 The following shows all the available parameters:
 
 <h2 id="parameters">Parameters</h2>
@@ -235,6 +304,14 @@ The following shows all the available parameters:
         E.g.: <code>linecolor=green,red,yellow</code>.<br/>
         Default line color is black. If the engine doesn't
         understand the specified color, the color will be gray.
+        </td>
+    </tr>
+    <tr>
+        <td><code>fillcolor</code></td>
+        <td>Fill colors for all lines, separated by comma.
+        E.g.: <code>fillcolor=green,red,yellow</code>.<br/>
+        Default fill color is 'none'. If the engine doesn't
+        understand the specified color, the area will not be filled.
         </td>
     </tr>
     <tr>
@@ -387,7 +464,6 @@ Note, how the 'KZT' line is not shown, because I have set linewidth to zero.
 | linewidth=,,3,,,,0}
 ...
 long sql. See <a href="sqllinechart.markdown">page source</a> for full view.
-[View source]  
 ...
  {sqllinechart}
 </code>
