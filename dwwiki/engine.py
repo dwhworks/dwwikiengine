@@ -587,7 +587,8 @@ class DWWikiEngine(object):
                 
             # Now redirect to the same URL the editor was called from
             # to test the file contents
-            back_link = base + get_params
+            #back_link = base + get_params
+            back_link = get_params
             
             # remove action=edit
             back_link = back_link.replace('&action=edit', '')
