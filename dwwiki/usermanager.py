@@ -45,8 +45,13 @@ class UserManager(object):
         """
         res = None
         # TODO postgresql uses %s instead of ? as parameters
-        #sql = "select dw_password, dw_groups from dw_users where dw_username = '{username}';".format(username=user)
-        sql = "select dw_password, dw_groups from dw_users where dw_username = ?;"
+        if self.db['ENGINE'] == 'postgresql':
+            sql = "select dw_password, dw_groups from dw_users where dw_username = %s;"
+        elif self.db['ENGINE'] == 'sqlite':
+            sql = "select dw_password, dw_groups from dw_users where dw_username = ?;"
+        else:
+            # fallback to %s
+            sql = "select dw_password, dw_groups from dw_users where dw_username = %s;"
         con = self.get_connection()
         try:
             cur = con.cursor()
@@ -69,7 +74,6 @@ class UserManager(object):
             username = user_data['username']
             stored_hash = user_data['password']
             salted_string = username + self.salt + clear_password
-            print salted_string
             hash_object = hashlib.md5(salted_string)
             hash_for_check = hash_object.hexdigest()
             if hash_for_check == stored_hash:

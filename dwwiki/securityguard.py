@@ -13,6 +13,7 @@ class SecurityGuard(object):
         """ accesslist - filename with file and dir permissions
         userlist - filename with user groups
         """
+
         self.accesslist = ConfigParser.ConfigParser()
         self.accesslist.read(access_list)
 
@@ -107,8 +108,6 @@ class SecurityGuard(object):
         # traverse directories top-down.
         section_name = '/'
         test_result = get_access(groups, section_name, action)
-        #print "--- testing top ---"
-        #print test_result
         
         # try to narrow down. maybe access is granted lower in the tree
         # or on the contrary - access is revoked

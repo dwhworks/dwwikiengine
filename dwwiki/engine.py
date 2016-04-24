@@ -450,7 +450,9 @@ class DWWikiEngine(object):
 
                     
                 #target = base + '/login'
-                raise cherrypy.HTTPRedirect(base + get_params)
+                # TODO base and get_params base may include some get params
+                #raise cherrypy.HTTPRedirect(base + get_params)
+                raise cherrypy.HTTPRedirect(get_params)
 
 
 
@@ -463,9 +465,7 @@ class DWWikiEngine(object):
     # routine used for logout
     @cherrypy.expose
     def logout(self, *vpath, **params):
-        print "!!!"
         base = cherrypy.config.get('tools.proxy.base','/')
-        print "base: %s" % base
         user = cherrypy.session.get('user', '')
         # if user is set, redirect to base.
         # Anyway, just redirect in any case
@@ -797,8 +797,6 @@ class DWWikiEngine(object):
         """
         
         dwwiki_path = cherrypy.request.request_line.split()[1]
-        print "dwwiki_path"
-        print dwwiki_path
         
 #        def make_redirect_url():
 #            base = cherrypy.config.get('tools.proxy.base','')
@@ -836,9 +834,7 @@ class DWWikiEngine(object):
 
 
         # real path points to a real file, which does exist
-        print vpath
         real_path = self.find_real_file(*vpath)
-        print real_path
 
         if real_path is None:
             # okay. path does not exist

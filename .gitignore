@@ -1,3 +1,4 @@
 *.pyc
 *.swp
 sessions/session*
+dwwikiserver-local.py

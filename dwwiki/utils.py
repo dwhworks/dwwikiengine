@@ -112,7 +112,9 @@ def make_page_menu(langs=True, edit=False, add_login_link=True):
         #logout_url = base + '/' + path_lang + '/login'
         logout_url = base + '/login'
         get_params = cherrypy.request.request_line.split()[1]
-        logout_url = logout_url + '?target=' + urllib.quote(base + get_params)
+        #print get_params
+        target = cherrypy.request.request_line.split()[1]
+        logout_url = logout_url + '?target=' + urllib.quote(target)
         login_logout = _('LC_LOG_IN')
     else:
         #logout_url = base + '/' + path_lang + '/logout'
