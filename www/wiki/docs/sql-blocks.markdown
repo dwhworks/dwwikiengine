@@ -1,5 +1,5 @@
-[home](/) /
-[docs](/docs/) /
+[home](../) /
+[docs](./) /
 sql-blocks
 
 SQL Blocks

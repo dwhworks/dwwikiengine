@@ -1,5 +1,5 @@
-[home](/) /
-[docs](/docs/) /
+[home](../) /
+[docs](./) /
 markdown
 
 Markdown
