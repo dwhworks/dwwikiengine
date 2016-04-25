@@ -18,7 +18,7 @@ of real numeric data with history.
 Tables
 ------
 
-{sqltable}
+{sqltable: db=mydwh}
 select 
     '[`' || name || '`](' || replace(name,'_','-') || ')' "Table name",
     case

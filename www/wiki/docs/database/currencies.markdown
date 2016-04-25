@@ -20,7 +20,7 @@ curr_symbol       | text          | YES  |     | Currency symbol - £, ¥ etc.
 
 ### Data Summary: ###
 
-{sqltable}
+{sqltable: db=mydwh}
 select
     case
         when c.curr_code = 'XDR' then

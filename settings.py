@@ -27,7 +27,7 @@ DATABASES = {
     # this is a database name as referred to
     # further in database aliases
     # actual database used in examples
-    'dwh': {
+    'mydwh': {
         'ENGINE': 'sqlite',
         'DB': dbpath,
         # limits rows only in html output
@@ -65,11 +65,11 @@ DATABASES = {
 # When connecting we are looking for a user's primary group
 # if there is no connection for a particular group, an error should be raised
 DATABASE_ALIASES_FOR_GROUPS = {
-    'dwh': {
+    'mydwh': {
         # group = database from DATABASES
-        'dev': 'dwh',
-        'users': 'dwh',
-        'default': 'dwh'
+        'dev': 'mydwh',
+        'users': 'mydwh',
+        'default': 'mydwh'
     },
     'service': {
         # this one will not connect, it's an example

@@ -23,7 +23,7 @@ Outputs SQL query as a vertical bar chart.
 
 A bare query example (ugly):
 
-{sqlbarchart}
+{sqlbarchart: db=mydwh}
 select
     date_id,
     current_rate
@@ -59,7 +59,7 @@ The first column is the x-axis bar label, the second - bar height.
 By default bar color is gray. You may specify bar color for each bar
 in the third column. Example:
 
-{sqlbarchart: title=USD to RUB in 2015
+{sqlbarchart: db=mydwh | title=USD to RUB in 2015
 | ylabel=RUB
 | width=500 | height=320
 | xtickrotation=0
@@ -92,7 +92,7 @@ order by
 
 Look how this query results look as a table:
 
-{sqltable}
+{sqltable: db=mydwh}
 select
     '`' || d.month_name_short_en || '`' "month",
     '`' || round(avg(r.current_rate),2) || '`' avg_rate,
@@ -139,7 +139,7 @@ In this case the order of query columns remains the same:
 In this case column names may matter, if you want to display a legend.
 See an example:
 
-{sqlbarchart: title=USD,GBP,EUR to RUB in 2015
+{sqlbarchart: db=mydwh | title=USD,GBP,EUR to RUB in 2015
 | ylabel=RUB
 | xlabel=month
 | width=600 | height=380
@@ -191,7 +191,7 @@ Column names are used as legend labels.
 
 See the above chart as a table:
 
-{sqltable}
+{sqltable: db=mydwh}
 select
     d.month_name_short_en,
     avg(
@@ -235,7 +235,7 @@ To do it, you must specify `stacked=yes` in parameters.
 
 See an example below. This is the same query as the previous one.
 
-{sqlbarchart: title=USD,GBP,EUR to RUB in 2015
+{sqlbarchart: db=mydwh | title=USD,GBP,EUR to RUB in 2015
 | ylabel=RUB
 | xlabel=month
 | width=400 | height=380
@@ -289,7 +289,7 @@ it will obscure the second completely.
 Here is what the previous chart will look like if we change the
 order of USD and EUR columns.
 
-{sqlbarchart: title=USD,GBP,EUR to RUB in 2015
+{sqlbarchart: db=mydwh | title=USD,GBP,EUR to RUB in 2015
 | ylabel=RUB
 | xlabel=month
 | width=400 | height=380

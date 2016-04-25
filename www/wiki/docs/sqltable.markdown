@@ -75,7 +75,7 @@ Example:
 
 Result:
 
-{sqltable: orientation=horizontal}
+{sqltable: db=mydwh | orientation=horizontal}
  select curr_code, curr_name_en, curr_symbol from currencies
  where curr_code in ('USD','CZK','GBP')
 {sqltable}
@@ -96,7 +96,7 @@ Looks like this:
 
 Result:
 
-{sqltable: totals=Total:,count}
+{sqltable: db=mydwh | totals=Total:,count}
  select curr_code, curr_name_en from currencies
  where curr_code in ('USD','CNY','AUD')
 {sqltable}
@@ -152,7 +152,7 @@ Now let's render a table:
 
 Here is what we get:
 
-{sqltable: style=blue-report}
+{sqltable: db=mydwh | style=blue-report}
 select curr_code, curr_name_en from currencies
 where curr_code in ('USD','CNY','AUD')
 {sqltable}
@@ -188,7 +188,7 @@ Example:
 Result - bold text in `curr_code` column, links with URL params in `curr_name` column:
 
 
-{sqltable}
+{sqltable: db=mydwh}
  select 
     '**' || curr_code || '**' curr_code,
     '[' || curr_name_en || '](links-example?currcode=' || curr_code || ')' curr_name
@@ -233,7 +233,7 @@ A space after the opening "`{:`" is mandatory.
 
 Example:
 
-{sqltable: orientation=horizontal}
+{sqltable: db=mydwh | orientation=horizontal}
 select
     r.date_id,
     r.curr_code,
@@ -348,7 +348,7 @@ Example:
 
 ### Monthly rate Chinese Yuan (CNY) to Russian Ruble (RUB) for 2015###
 
-{sqltable}
+{sqltable:  db=mydwh}
 select
     z.month_name "Month",
     z.avg_rate "Avg.rate, RUB"

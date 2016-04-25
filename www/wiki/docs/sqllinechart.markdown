@@ -24,7 +24,7 @@ graphs out of sql query results.
 
 Simple example (rather ugly):
 
-{sqllinechart}
+{sqllinechart: db=mydwh}
 select
     r.date_id,
     r.current_rate "CNY"
@@ -56,7 +56,7 @@ The first column contains x-axis marks, the second (and subsequent)
 columns contain y-axis values. The line label is the 2nd column heading.
 Look at the query results as is:
 
-{sqltable}
+{sqltable: db=mydwh}
 select
     r.date_id,
     r.current_rate "CNY"
@@ -72,7 +72,7 @@ add y-axis label and the chart title.
 
 The second line is the third column in SQL.
 
-{sqllinechart: linecolor=green,blue | ylabel=RUB | title=Exchange rates}
+{sqllinechart: db=mydwh | linecolor=green,blue | ylabel=RUB | title=Exchange rates}
 select
     r.date_id,
     r.current_rate "USD",
@@ -121,7 +121,7 @@ in size.
 
 And add both grid lines to the chart canvas.
 
-{sqllinechart: linecolor=blue,green |
+{sqllinechart: db=mydwh | linecolor=blue,green |
 ylabel=RUB | title=Exchange rates
 | width=400 | height=320 | grid=both | miny=50
 }
@@ -196,9 +196,9 @@ but you won't see any label to it.
 
 We may also fill the area with colors by specifying `fillcolor` parameter:
 
-{sqllinechart: linecolor=red,blue,green | fillcolor=#f9966b,#99ccff,#99ff99 |
+{sqllinechart: db=mydwh | linecolor=red,blue,green | fillcolor=#f9966b,#99ccff,#99ff99 |
 ylabel=RUB | title=Exchange rates
-| width=400 | height=320 | grid=both | miny=0
+| width=500 | height=320 | grid=both | miny=0
 }
 select
     case 
@@ -232,7 +232,7 @@ All lines and all filled areas are drawn according to the column order.
 So the second filled area may completely obscure the first one. Yet the
 line itself is still visible. See below:
 
-{sqllinechart: linecolor=red,blue,green | fillcolor=#f9966b,#99ccff,#99ff99 |
+{sqllinechart: db=mydwh | linecolor=red,blue,green | fillcolor=#f9966b,#99ccff,#99ff99 |
 ylabel=RUB | title=Exchange rates
 | width=400 | height=320 | grid=both | miny=50
 }
@@ -393,7 +393,7 @@ marker   |  description
 "*"      | star
 "d"      | thin diamond
 
-{sqllinechart: linecolor=green,0.75,#DC143C,orange,y,brown,lime,black
+{sqllinechart: db=mydwh | linecolor=green,0.75,#DC143C,orange,y,brown,lime,black
 | miny=-20 | maxy=100 | marker=.,o,v,^,<,>,*,d | title=Markers example
 | linewidth=,,3,,,,0}
 select

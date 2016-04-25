@@ -3,7 +3,7 @@ Long table
 
 Scroll down...
 
-{sqltable}
+{sqltable: db=mydwh}
 select
    * 
 from 

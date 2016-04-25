@@ -41,7 +41,7 @@ between different dates may change. The rate shown is adjusted for current `date
 
 ### Data Summary ###
 
-{sqltable: totals=Records,sum}
+{sqltable: db=mydwh | totals=Records,sum}
 select
     r.curr_code "currency",
     count(r.curr_code) "total days",

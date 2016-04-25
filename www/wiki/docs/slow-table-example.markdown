@@ -19,7 +19,7 @@ what else.
 
 Generally, however, all browsers work as expected.
 
-{sqltable: delay=500}
+{sqltable: db=mydwh | delay=500}
 select
    * 
 from 

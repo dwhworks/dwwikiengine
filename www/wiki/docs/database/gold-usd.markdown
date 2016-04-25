@@ -24,7 +24,7 @@ See [wikipedia](https://en.wikipedia.org/wiki/Gold_fixing) for what 'AM', or 'PM
 
 Dates loaded:
 
-{sqltable}
+{sqltable: db=mydwh}
 select
     min(date_id) "min date",
     max(date_id) "max date",

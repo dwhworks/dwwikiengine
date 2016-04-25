@@ -29,7 +29,7 @@ where
 
 Result:
 
-{sqlinline}
+{sqlinline: db=mydwh}
 select
     d.weekday_name_en,
     d.month_day_num,
@@ -68,7 +68,7 @@ where
 
 Returns
 
-{sqlinline}
+{sqlinline: db=mydwh}
 select
     '- ' list_mark,
     d.weekday_name_en,
@@ -101,7 +101,7 @@ Example. Header:
 <div class="colored-code">
 <code>
  &lt;h2&gt;Today: 
-{sqlinline}
+{sqlinline: db=mydwh}
 select
     d.weekday_name_en,
     d.month_day_num,
@@ -118,7 +118,7 @@ where
 
 
 <h2>Today: 
-{sqlinline}
+{sqlinline: db=mydwh}
 select
     d.weekday_name_en,
     d.month_day_num,
@@ -164,7 +164,7 @@ Complex table example:
     <th>Month day</th>
     <th>Week day</th>
 </tr>
-{sqlinline}
+{sqlinline: db=mydwh}
 select
     '<tr><td>' || d.weekday_num_sun || '</td>',
     '<td>' || d.month_name_en || '</td>',
@@ -193,7 +193,7 @@ Another example: a plain-text horizontal bar chart:
  <code>
  RUB    0    10   20   30   40   50   60   70   80   90   100  110  120
  -------+----+----+----+----+----+----+----+----+----+----+----+----+--
-{sqlinline}
+{sqlinline: db=mydwh}
 -- how to repeat a string in sqlite
 -- X - string
 -- Y - number of repetitions
@@ -220,12 +220,3 @@ Next -> [`{sqllinechart}`](sqllinechart)
 [View source](sqlinline.markdown)  
 [Printable html](?action=printable)
 
-</pre>
-</pre>
-</xmp>
-</xmp>
-
-        
-        
-        
-        
