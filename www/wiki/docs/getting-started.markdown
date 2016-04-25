@@ -1,5 +1,5 @@
-[home](/) /
-[docs](/docs/) /
+[home](../) /
+[docs](../docs/) /
 getting-started  
 
 Getting Started
