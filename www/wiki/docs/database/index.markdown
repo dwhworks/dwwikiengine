@@ -63,7 +63,7 @@ Check out my cutting edge, agile, and extremely flexible data model diagram:
 </div>
 
 
-Next -> [Online Editing](/docs/online-editing)
+Next -> [Online Editing](../online-editing)
 
 ----------------------------------------------------------------------
 

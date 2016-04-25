@@ -34,7 +34,7 @@ you are redirected to the editor to create it.
 
 Try this (you must be logged in as admin):
 
-[new admin report](/users/admin/new-report-1)
+[new admin report](../users/admin/new-report-1)
 
 The editor is a minimal one, without javascript or WYSIWYG interface.
 The editor does not allow you to create new directories.

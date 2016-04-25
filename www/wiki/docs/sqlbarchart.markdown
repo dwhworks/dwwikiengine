@@ -454,7 +454,7 @@ query records is limited to 100. It is hardcoded in the component code (`sqlbarc
 All in all, bar chart works pretty much the same as `{sqllinechart}` does.
 For any details see [`{sqllinechart}`](sqllinechart).
 
-Next -> [Sample Database](/docs/database/)
+Next -> [Sample Database](./database/)
 
 -------------------------------------------------------------
 [View source](sqlbarchart.markdown)  
