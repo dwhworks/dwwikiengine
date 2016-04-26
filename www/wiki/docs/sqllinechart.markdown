@@ -72,7 +72,8 @@ add y-axis label and the chart title.
 
 The second line is the third column in SQL.
 
-{sqllinechart: db=mydwh | linecolor=green,blue | ylabel=RUB | title=Exchange rates}
+{sqllinechart: db=mydwh | linecolor=green,blue | ylabel=RUB | title=Exchange rates
+}
 select
     r.date_id,
     r.current_rate "USD",
@@ -123,7 +124,8 @@ And add both grid lines to the chart canvas.
 
 {sqllinechart: db=mydwh | linecolor=blue,green |
 ylabel=RUB | title=Exchange rates
-| width=400 | height=320 | grid=both | miny=50
+| grid=both | miny=50
+
 }
 select
     case 
@@ -155,7 +157,7 @@ The code:
 <code>
 {sqllinechart: linecolor=green,blue |
 ylabel=RUB | title=Exchange rates
-| width=400 | height=320 | grid=both
+| grid=both
 }
 select
     -- x-marks:
@@ -198,7 +200,7 @@ We may also fill the area with colors by specifying `fillcolor` parameter:
 
 {sqllinechart: db=mydwh | linecolor=red,blue,green | fillcolor=#f9966b,#99ccff,#99ff99 |
 ylabel=RUB | title=Exchange rates
-| width=500 | height=320 | grid=both | miny=0
+| grid=both | miny=0
 }
 select
     case 
@@ -234,7 +236,7 @@ line itself is still visible. See below:
 
 {sqllinechart: db=mydwh | linecolor=red,blue,green | fillcolor=#f9966b,#99ccff,#99ff99 |
 ylabel=RUB | title=Exchange rates
-| width=400 | height=320 | grid=both | miny=50
+| width=400 | height=400 | grid=both | miny=50
 }
 select
     case 

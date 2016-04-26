@@ -464,7 +464,7 @@ class SqlLineChartStreamer(dwstreamer.BaseDwStreamer):
 
             # 80 dots per inch. So 7 x 4 inches will make 560 x 320 pixels 
             if (chart_width > 0) and (chart_height > 0):
-                fig = plt.figure(figsize=[chart_width / 80, chart_height / 80], dpi=80)
+                fig = plt.figure(figsize=[float(chart_width) / 80, float(chart_height) / 80])
             else:
                 fig = plt.figure()
             ax = fig.add_subplot(111)
@@ -721,6 +721,11 @@ class SqlLineChartStreamer(dwstreamer.BaseDwStreamer):
                 ax.set_ylim(miny, maxy)
             else:
                 ax.set_ylim(auto=True)
+
+            # daniel we have to set this otherwise
+            # with fill_between the x limits get distorted on some versions
+            # x_value_counter is the number of records in the query
+            ax.set_xlim(0, x_value_counter-1)
             
             plt.tight_layout()
             
